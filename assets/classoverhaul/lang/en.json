@@ -1,0 +1,13 @@
+{
+    "item-backtreck": "Backtreck Watch",
+    "item-quickstep": "Quickstep Watch",
+    "item-tempclock": "Barrel Ageinator",
+    "item-tempcloth": "Temporal Bandage",
+    "game:charattribute-bowDrawingStrength-0.5": "+50% ranged distance",
+    "game:charattribute-meleeWeaponsDamage-0.1":"+10% melee damage",
+    "game:charattribute-hungerrate-0.2":"+20% hunger rate",
+    "game:traitdesc-merciless":"For every 1% movement speed lost, gain 3% melee damage. Also includes craftable <a href=\"handbooksearch://blackguard shortsword\">shortsword</a> and <a href=\"handbooksearch://blackguard shield\">shield</a>.",
+    "game:traitdesc-tinkerer":"Exclusive craftable <a href=\"handbooksearch://tuning spear or ageinator\">devices</a> and <a href=\"handbooksearch://watch\">watches</a>.",
+    "game:charattribute-rangedWeaponsAcc-2": "+200% ranged accuracy",
+    "game:traitdesc-clothier": "Exclusive craftable <a href=\"handbooksearch://sewing kit or chateau or pastoral or reindeer or moon or minstrel or fortune or nomad or spice or cobalt or azure or thigh-high or fine trousers or high leather\">sewing kit, clothes</a> and <a href=\"handbooksearch://temporal bandage\">temporal bandage</a>."
+}

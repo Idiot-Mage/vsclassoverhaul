@@ -1,0 +1,30 @@
+[
+	{
+		"ingredientPattern":"_A,CD,_E",
+		"width":2,
+		"height":3,
+		"ingredients":{
+			"A": {
+				"type":"block",
+				"code": "game:metal-parts"
+			},
+			"C": {
+				"type":"item",
+				"code":"game:jonasframes-gearbox01"
+			},
+			"D": {
+				"type":"item",
+				"code":"game:jonasparts-connector01"
+			},
+			"E": {
+				"type":"item",
+				"code":"game:jonasparts-cylinder01"
+			}
+		},
+		"output":{
+			"type":"item",
+			"code":"backtreck"
+		},
+		"requiresTrait":"tinkerer"
+	}
+]

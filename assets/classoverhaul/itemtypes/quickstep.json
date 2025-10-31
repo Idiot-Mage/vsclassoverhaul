@@ -1,0 +1,11 @@
+{
+	"class": "classoverhaul.quickstep",
+	"code": "quickstep",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/quickstep"
+	},
+	"maxstacksize": 1
+}

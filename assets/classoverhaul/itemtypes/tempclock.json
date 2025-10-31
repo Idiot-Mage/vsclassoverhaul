@@ -1,0 +1,12 @@
+{
+	"class": "classoverhaul.tempclock",
+	"code": "tempclock",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/tempclock"
+	},
+	"maxstacksize": 1,
+	"durability": 2
+}

@@ -1,0 +1,11 @@
+{
+	"class": "classoverhaul.backtreck",
+	"code": "backtreck",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/backtreck"
+	},
+	"maxstacksize": 1
+}

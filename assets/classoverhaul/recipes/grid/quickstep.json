@@ -1,0 +1,30 @@
+[
+	{
+		"ingredientPattern":"AV,C_,E_",
+		"width":2,
+		"height":3,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:ingot-gold"
+			},
+			"C": {
+				"type":"item",
+				"code":"game:jonasframes-gearbox01"
+			},
+			"E": {
+				"type":"item",
+				"code":"game:jonasparts-tank01"
+			},
+			"V": {
+				"type":"block",
+				"code": "game:metal-parts"
+			}
+		},
+		"output":{
+			"type":"item",
+			"code":"quickstep"
+		},
+		"requiresTrait":"tinkerer"
+	}
+]

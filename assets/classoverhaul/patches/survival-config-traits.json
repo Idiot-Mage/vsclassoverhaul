@@ -1,0 +1,26 @@
+[
+  {
+    "op": "replace",
+    "path": "/9/attributes/meleeWeaponsDamage",
+    "value": 0.1,
+    "file": "game:config/traits.json"
+  },
+  {
+    "op": "replace",
+    "path": "/18/attributes/hungerrate",
+    "value": 0.2,
+    "file": "game:config/traits.json"
+  },
+  {
+    "op": "replace",
+    "path": "/0/attributes/rangedWeaponsAcc",
+    "value": 2.0,
+    "file": "game:config/traits.json"
+  },
+  {
+    "op": "replace",
+    "path": "/0/attributes/bowDrawingStrength",
+    "value": 0.5,
+    "file": "game:config/traits.json"
+  }
+]

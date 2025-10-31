@@ -1,0 +1,11 @@
+{
+	"class": "classoverhaul.tempcloth",
+	"code": "tempcloth",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/tempbandage"
+	},
+	"maxstacksize": 3
+}

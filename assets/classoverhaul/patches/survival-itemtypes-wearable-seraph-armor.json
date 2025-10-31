@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/warmthByType",
+    "value": {
+      "armor-body-sewn-*": 1,
+      "armor-body-tailored-*": 2,
+      "armor-legs-sewn-*": 1,
+      "armor-legs-tailored-*": 2,
+      "armor-head-sewn-*": 1,
+      "armor-head-tailored-*": 2
+    },
+    "file": "game:itemtypes/wearable/seraph/armor.json",
+    "side": "Server"
+  }
+]

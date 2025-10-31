@@ -1,0 +1,26 @@
+[
+	{
+		"ingredientPattern":"AB,_C",
+		"width":2,
+		"height":2,
+		"ingredients":{
+			"A": {
+				"type":"block",
+				"code": "game:metal-parts"
+			},
+			"B": {
+				"type":"block",
+				"code":"game:metal-parts"
+			},
+			"C": {
+				"type":"item",
+				"code":"game:gear-temporal"
+			}
+		},
+		"output":{
+			"type":"item",
+			"code":"tempclock"
+		},
+		"requiresTrait":"tinkerer"
+	}
+]
