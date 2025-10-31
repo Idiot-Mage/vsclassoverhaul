@@ -207,6 +207,7 @@ internal class itemQuickstep : Item{
 				byEntity.ServerPos.Motion.Y = 0.1f;
 				
 				slot?.Itemstack.Attributes.SetInt("fuel",fuel-1);
+				slot.MarkDirty();
 				
 				Parts p = new Parts(); 
 				p.spawnParts(byEntity,new Vec3d(byEntity.Pos.X,byEntity.Pos.Y,byEntity.Pos.Z));
@@ -253,6 +254,7 @@ internal class itemBacktreck : Item{
 	 		slot.MarkDirty();
 	 	}else if(stack.Attributes.GetInt("fuel",0)>0){
 	 		stack.Attributes.SetInt("fuel",stack.Attributes.GetInt("fuel",0)-1);
+	 		slot.MarkDirty();
 	 		int xx = xpos+byEntity.World.DefaultSpawnPosition.AsBlockPos.X;
 	 		int zz = zpos+byEntity.World.DefaultSpawnPosition.AsBlockPos.Z;
 	 		foreach(var plr in byEntity.World.AllOnlinePlayers){
