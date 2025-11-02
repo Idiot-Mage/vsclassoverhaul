@@ -65,9 +65,9 @@ internal class itemTempcloth : Item{
 			var capi = world.Api as ICoreClientAPI;
 			var player = capi?.World?.Player;
 			if(player!=null && player.Entity.WatchedAttributes.GetString("characterClass")=="tailor"){
-				dsc.AppendLine("Instantly restores 5hp regardless of healing bonus for all players within 5 blocks.\n\nWhen used at full health, provides an overheal, granting invulnurability for 1 hit.\nOverheal is lost upon taking damage.");
+				dsc.AppendLine("Instantly restores 5hp regardless of healing bonus for all players within 5 blocks.\n\nWhen used at full health, provides an overheal, granting invulnurability for 1 hit.");
 			}else{
-				dsc.AppendLine("Instantly restores 5hp regardless of healing bonus.\n\nWhen used at full health, provides an overheal, granting invulnurability for 1 hit.\nOverheal is lost upon taking damage.");
+				dsc.AppendLine("Instantly restores 5hp regardless of healing bonus.\n\nWhen used at full health, provides an overheal, granting invulnurability for 1 hit.");
 			}
 		}
 	}
