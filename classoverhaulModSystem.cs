@@ -47,6 +47,17 @@ public class classoverhaulModSystem : ModSystem
 				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",0);
 			}
 			
+			if(plr.Entity.WatchedAttributes.GetString("characterClass")=="clockmaker"){
+				double stab = plr.Entity.WatchedAttributes.GetDouble("temporalStability");
+				double addon = 0;
+				for(double i=1; i>stab; i-=0.01){
+					addon+=0.01;
+				}
+				plr.Entity.Stats.Set("walkspeed","classoverhaul:clockmaker",(float)addon);
+			}else{
+				plr.Entity.Stats.Set("walkspeed","classoverhaul:clockmaker",0);
+			}
+			
 			var inv = plr.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
 			if(inv==null){continue;}
 			

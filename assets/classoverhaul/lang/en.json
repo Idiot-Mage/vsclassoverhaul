@@ -10,5 +10,7 @@
     "game:traitdesc-tinkerer":"Exclusive craftable <a href=\"handbooksearch://tuning spear or ageinator\">devices</a> and <a href=\"handbooksearch://watch\">watches</a>",
     "game:charattribute-rangedWeaponsAcc-2": "+200% ranged accuracy",
     "game:traitdesc-clothier": "Exclusive craftable <a href=\"handbooksearch://sewing kit or chateau or pastoral or reindeer or moon or minstrel or fortune or nomad or spice or cobalt or azure or thigh-high or fine trousers or high leather\">sewing kit, clothes</a> and <a href=\"handbooksearch://temporal bandage\">temporal bandage</a>. When crafting wearable items, have a chance to add an extra stat",
-    "game:itemdesc-spear-generic-hacking": "Attack a locust for a chance to convert it into an ally. It will follow and protect you, and you can have as many as you like.\n\n<font color=\"#99c9f9\"><i>Bring the wayward children home.</i></font><br>"
+    "game:itemdesc-spear-generic-hacking": "Attack a locust for a chance to convert it into an ally. It will follow and protect you, and you can have as many as you like.\n\n<font color=\"#99c9f9\"><i>Bring the wayward children home.</i></font><br>",
+    "game:trait-timed": "<font color=\"#84ff84\">• Temporal Anomaly </font>",
+    "game:traitdesc-timed": "Temporal stability lost is added to movement speed"
 }

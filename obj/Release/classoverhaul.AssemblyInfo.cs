@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("classoverhaul")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2de59fc54ddff5488858d5f22f31d9036380c3d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43b8e4fe76f49cc195bf351d001a5efc95380127")]
 [assembly: System.Reflection.AssemblyProductAttribute("classoverhaul")]
 [assembly: System.Reflection.AssemblyTitleAttribute("classoverhaul")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
