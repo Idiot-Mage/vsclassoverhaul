@@ -1,0 +1,11 @@
+{
+	"class": "classoverhaul.climbtool",
+	"code": "climbtool",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/climbtool"
+	},
+	"durability": 25
+}

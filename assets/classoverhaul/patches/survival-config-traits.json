@@ -22,5 +22,17 @@
     "path": "/0/attributes/bowDrawingStrength",
     "value": 0.5,
     "file": "game:config/traits.json"
+  },
+  {
+    "op": "replace",
+    "path": "/5/attributes/wholeVesselLootChance",
+    "value": 0.5,
+    "file": "game:config/traits.json"
+  },
+  {
+    "op": "replace",
+    "path": "/5/attributes/rustyGearDropRate",
+    "value": 0.25,
+    "file": "game:config/traits.json"
   }
 ]

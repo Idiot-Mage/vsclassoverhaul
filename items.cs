@@ -10,6 +10,46 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Util;
 using Vintagestory.API.Datastructures;
 
+
+internal class itemClimbtool : Item{
+	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
+		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+		dsc.AppendLine("Use to climb blocks you are looking at");	
+	}
+	
+	public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling){
+		handHandling = EnumHandHandling.Handled;
+	}
+	
+	public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel){
+		if(blockSel!=null){
+			Vec3d bp = new Vec3d(blockSel.Position.X,blockSel.Position.Y,blockSel.Position.Z);
+			if(byEntity.Pos.DistanceTo(bp)<=2.6 && blockSel.Position.Y>byEntity.Pos.Y){
+				if(byEntity.WatchedAttributes.GetString("characterClass")=="malefactor"){
+					byEntity.Pos.Motion.Y = 0.08;
+				}else{
+					byEntity.Pos.Motion.Y = 0.05;
+				}
+				
+				if(secondsUsed>=2){
+					slot.Itemstack.Attributes.SetInt("durability",slot.Itemstack.Collectible.GetRemainingDurability(slot.Itemstack)-1);
+					if(slot.Itemstack.Collectible.GetRemainingDurability(slot.Itemstack)<=0){
+						slot.TakeOutWhole();
+					}
+					slot.MarkDirty();
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}
+
+
+
+
+
+
 public class Parts{
 	public void spawnParts(EntityAgent entity,Vec3d pos){
 		//copied from vanilla translocator

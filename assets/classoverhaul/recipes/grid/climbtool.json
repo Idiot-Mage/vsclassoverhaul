@@ -1,0 +1,26 @@
+[
+	{
+		"ingredientPattern":"A,C,B",
+		"width":1,
+		"height":3,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:flint"
+			},
+			"C": {
+				"type":"item",
+				"code":"game:stick"
+			},
+			"B": {
+				"type":"item",
+				"code":"game:rope"
+			}			
+		},
+		"output":{
+			"type":"item",
+			"code":"climbtool"
+		},
+		"requiresTrait":"malefactor"
+	}
+]

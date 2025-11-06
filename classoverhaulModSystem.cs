@@ -2,7 +2,14 @@
 using Vintagestory.API.Server;
 using Vintagestory.API.Config;
 using Vintagestory.API.Common;
+using Vintagestory.API.Common.Entities;
+using Vintagestory.GameContent;
 using HarmonyLib;
+using Vintagestory.API.Util;
+using Vintagestory.API.Datastructures;
+using ProtoBuf;
+using Vintagestory.API.MathTools;
+using System;
 
 namespace classoverhaul;
 
@@ -10,9 +17,7 @@ public class classoverhaulModSystem : ModSystem
 {
 	private readonly Harmony harmonyInstance = new Harmony(harmonyID);
 	public const string harmonyID = "classoverhaulPatches";
-
-	// Called on server and client
-	// Useful for registering block/entity classes on both sides
+	
 	public override void Start(ICoreAPI api){
 		harmonyInstance.PatchAll();
 		
@@ -20,17 +25,49 @@ public class classoverhaulModSystem : ModSystem
 		api.RegisterItemClass(Mod.Info.ModID+".quickstep",typeof(itemQuickstep));
 		api.RegisterItemClass(Mod.Info.ModID+".tempclock",typeof(itemTempclock));
 		api.RegisterItemClass(Mod.Info.ModID+".tempcloth",typeof(itemTempcloth));
+		api.RegisterItemClass(Mod.Info.ModID+".climbtool",typeof(itemClimbtool));
 	}
 	
 	public static ICoreServerAPI chsapi;
 	public override void StartServerSide(ICoreServerAPI api){
-		api.Event.RegisterGameTickListener(onTickServer1s, 1000, 200);
+		api.Event.RegisterGameTickListener(onTickServer1s,1000,200);
 		
 		chsapi=api;
 	}
 
+	ICoreClientAPI chcapi;
+	IClientNetworkChannel clientChannel;
+	int dashCooldown = 0;
 	public override void StartClientSide(ICoreClientAPI api){
-
+		api.Event.RegisterGameTickListener(onTickClient1s,1000,200);
+		
+		chcapi = api;
+		chcapi.Input.RegisterHotKey("Class Abillity", "Class Ability", GlKeys.F, HotkeyType.CharacterControls);
+		chcapi.Input.SetHotKeyHandler("Class Abillity", ClassAbility);
+	}
+	
+	private bool ClassAbility(KeyCombination key){
+		var plr = chcapi.World.Player.Entity;
+		switch(plr.WatchedAttributes.GetString("characterClass")){
+			case "malefactor":
+				if(plr.Pos.Motion!=Vec3d.Zero && plr.OnGround){
+					if(dashCooldown>0){break;}
+					dashCooldown=2;
+					double mult = (double)plr.Stats.GetBlended("walkspeed")*15;
+					double dx = plr.Pos.Motion.X*mult;
+					double dy = plr.Pos.Motion.Y+0.1;
+					double dz = plr.Pos.Motion.Z*mult;
+					plr.Pos.Motion = new Vec3d(dx,dy,dz);
+				}
+			break;
+		}
+		return true;
+	}
+	
+	private void onTickClient1s(float dt){
+		if(dashCooldown>0){
+			dashCooldown--;
+		}
 	}
 
 	private void onTickServer1s(float dt){

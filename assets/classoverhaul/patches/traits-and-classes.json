@@ -18,5 +18,25 @@
 		"op": "addmerge",
 		"path": "/3/traits",
 		"value": ["timed"]
+	},
+	{
+		"enabled": true,
+		"file": "game:config/traits",
+		"op": "addeach",
+		"path": "/-",
+		"value": [
+			{
+				"code": "rogue",
+				"type": "positive",
+				"attributes": {}
+			}
+		]
+	},
+	{
+		"enabled": true,
+		"file": "game:config/characterclasses",
+		"op": "addmerge",
+		"path": "/2/traits",
+		"value": ["rogue"]
 	}
 ]
