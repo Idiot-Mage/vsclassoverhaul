@@ -1,0 +1,29 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"fumoreimu": [256,256]
+	},
+	"textures": {
+		"fumoreimu": "edia/gamedisk/vintagestory/classoverhaul/classoverhaul/assets/classoverhaul/textures/blocks/fumoreimu"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 0.0, -1.5, 8.0 ],
+			"to": [ 16.0, 14.5, 8.0 ],
+			"rotationOrigin": [ 0.0, -2.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#fumoreimu", "uv": [ 0.0, 0.0, 256.0, 256.0 ], "autoUv": false },
+				"east": { "texture": "#fumoreimu", "uv": [ 0.0, 0.0, 0.5, 16.0 ] },
+				"south": { "texture": "#fumoreimu", "uv": [ 0.0, 0.0, 256.0, 256.0 ], "autoUv": false, "windMode": [-1,-1,-1,-1] },
+				"west": { "texture": "#fumoreimu", "uv": [ 0.0, 0.0, 0.5, 16.0 ] },
+				"up": { "texture": "#fumoreimu", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"down": { "texture": "#fumoreimu", "uv": [ 0.0, 0.0, 16.0, 0.5 ] }
+			}
+		}
+	]}

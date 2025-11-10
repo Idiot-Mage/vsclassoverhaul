@@ -8,7 +8,7 @@
   {
     "op": "replace",
     "path": "/18/attributes/hungerrate",
-    "value": 0.2,
+    "value": 0.1,
     "file": "game:config/traits.json"
   },
   {

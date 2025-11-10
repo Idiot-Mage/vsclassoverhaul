@@ -9,6 +9,16 @@
 				"code": "timed",
 				"type": "positive",
 				"attributes": {}
+			},
+			{
+				"code": "rogue",
+				"type": "positive",
+				"attributes": {}
+			},
+			{
+				"code": "trapper",
+				"type": "positive",
+				"attributes": {}
 			}
 		]
 	},
@@ -21,22 +31,16 @@
 	},
 	{
 		"enabled": true,
-		"file": "game:config/traits",
-		"op": "addeach",
-		"path": "/-",
-		"value": [
-			{
-				"code": "rogue",
-				"type": "positive",
-				"attributes": {}
-			}
-		]
+		"file": "game:config/characterclasses",
+		"op": "addmerge",
+		"path": "/2/traits",
+		"value": ["rogue"]
 	},
 	{
 		"enabled": true,
 		"file": "game:config/characterclasses",
 		"op": "addmerge",
-		"path": "/2/traits",
-		"value": ["rogue"]
+		"path": "/1/traits",
+		"value": ["trapper"]
 	}
 ]

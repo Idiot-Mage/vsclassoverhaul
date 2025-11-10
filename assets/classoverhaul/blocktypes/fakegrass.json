@@ -1,0 +1,36 @@
+{
+	"code": "fakegrass",
+	"class": "classoverhaul.fakegrass",
+	"creativeinventory": {
+		"general":["*"]
+	},
+	"drawtype": "Cube",
+	"texture": {
+		"base": "blocks/sparse"
+	},
+	"blockmaterial": "Soil",
+	"sounds": {
+		"place": "game:sounds/block/woodcreak_1"
+	},
+	"lightabsorption": 0,
+	"sideopaque":{
+		"all": false
+	},
+	"sidesolid":{
+		"all": false
+	},
+	"resistance": 1,
+	"requiredminingtier": 0,
+	"collisionbox": {
+		"x1": 0,
+		"y1": 0,
+		"z1": 0,
+		"x2": 0,
+		"y2": 0,
+		"z2": 0
+	},
+	"fertility": 100,
+	"attributes": {
+		"plantable": true
+	}
+}

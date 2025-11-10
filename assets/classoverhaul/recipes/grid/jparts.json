@@ -1,0 +1,157 @@
+[
+	{
+		"ingredientPattern":"A,B,B,A",
+		"width":2,
+		"height":2,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:metalbit-cupronickel"
+			},
+			"B": {
+				"type":"item",
+				"code": "game:metalnailsandstrips-cupronickel"
+			}
+		},
+		"output":{
+			"type":"block",
+			"code":"game:metal-parts",
+			"quantity": 2
+		},
+		"requiresTrait":"tinkerer"
+	}, 
+  {
+    "ingredientPattern": "M_M,TBQ,M_M",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "T": {
+        "type": "item",
+        "code": "game:gear-temporal"
+      },
+      "B": {
+        "type": "item",
+        "code": "game:ingot-brass"
+      },
+      "Q": {
+        "type": "item",
+        "code": "game:clearquartz"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasparts-connector01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "MTM,MTM,_M_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "T": {
+        "type": "item",
+        "code": "game:gear-temporal"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasparts-cylinder01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "_M_,MTM,_M_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "T": {
+        "type": "item",
+        "code": "game:gear-temporal"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasparts-cylinder02",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "M_M,T_M,_M_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "T": {
+        "type": "item",
+        "code": "game:gear-temporal"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasparts-tank01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "_M_,MTM,MM_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "T": {
+        "type": "item",
+        "code": "game:gear-temporal"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasparts-tank02",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "MTM,MM_,_M_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "T": {
+        "type": "item",
+        "code": "game:gear-temporal"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasparts-valve01",
+      "quantity": 1
+    }
+  }
+]

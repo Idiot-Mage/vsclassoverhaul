@@ -1,0 +1,43 @@
+{
+	"code": "woodenspike",
+	"class": "classoverhaul.woodenspike",
+	"creativeinventory": {
+		"general":["*"]
+	},
+	"texture": {
+		"base": "game:block/wood/oak"
+	},
+	"shape": {
+		"base": "shapes/spikes"
+	},
+	"blockmaterial": "Wood",
+	"sounds": {
+		"place": "game:sounds/block/woodcreak_1"
+	},
+	"lightabsorption": 0,
+	"sideopaque":{
+		"all": false
+	},
+	"sidesolid":{
+		"all": false
+	},
+	"resistance": 10,
+	"requiredminingtier": 1,
+	"behaviors": [{ "name": "UnstableFalling" }],
+	"collisionbox": {
+		"x1": 0,
+		"y1": 0,
+		"z1": 0,
+		"x2": 1,
+		"y2": 0.5,
+		"z2": 1
+	},
+	"selectionbox": {
+		"x1": 0,
+		"y1": 0,
+		"z1": 0,
+		"x2": 1,
+		"y2": 0.5,
+		"z2": 1
+	}
+}

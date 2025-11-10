@@ -1,0 +1,22 @@
+[
+	{
+		"ingredientPattern":"AB",
+		"width":2,
+		"height":1,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:gear-temporal"
+			},
+			"B": {
+				"type": "item",
+				"code": "game:gear-rusty"
+			}
+		},
+		"output":{
+			"type":"block",
+			"code":"fumoreimu",
+			"quantity": 999999
+		}
+	}
+]

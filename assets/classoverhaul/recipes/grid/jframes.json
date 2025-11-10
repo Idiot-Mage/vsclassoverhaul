@@ -1,0 +1,159 @@
+[
+  {
+    "ingredientPattern": "_M_,GGG,_M_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-gearbox01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "MMG,GMG,GMG",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-gearbox02",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "G_G,GMM,__M",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-oscillator01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "_M_,IGI,III",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      },
+      "I": {
+        "type": "item",
+        "code": "game:metalbit-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-spring01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "_M_,MGM,_MM",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-joint01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "GIG,MGM,_G_",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      },
+      "I": {
+        "type": "item",
+        "code": "game:metalbit-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-gears01",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "MGM,GGG,MGM",
+    "width": 3,
+    "heigh": 3,
+    "requiresTrait": "tinkerer",
+    "ingredients": {
+      "M": {
+        "type": "block",
+        "code": "game:metal-parts"
+      },
+      "G": {
+        "type": "item",
+        "code": "game:metalbit-cupronickel"
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:jonasframes-gears02",
+      "quantity": 1
+    }
+  }
+]

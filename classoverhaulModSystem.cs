@@ -26,6 +26,10 @@ public class classoverhaulModSystem : ModSystem
 		api.RegisterItemClass(Mod.Info.ModID+".tempclock",typeof(itemTempclock));
 		api.RegisterItemClass(Mod.Info.ModID+".tempcloth",typeof(itemTempcloth));
 		api.RegisterItemClass(Mod.Info.ModID+".climbtool",typeof(itemClimbtool));
+		api.RegisterItemClass(Mod.Info.ModID+".overhaulsling",typeof(itemOverhaulSling));
+		
+		api.RegisterBlockClass(Mod.Info.ModID+".fakegrass",typeof(blockFakegrass));
+		api.RegisterBlockClass(Mod.Info.ModID+".woodenspike",typeof(blockWoodenspike));
 	}
 	
 	public static ICoreServerAPI chsapi;
@@ -42,7 +46,7 @@ public class classoverhaulModSystem : ModSystem
 		api.Event.RegisterGameTickListener(onTickClient1s,1000,200);
 		
 		chcapi = api;
-		chcapi.Input.RegisterHotKey("Class Abillity", "Class Ability", GlKeys.F, HotkeyType.CharacterControls);
+		chcapi.Input.RegisterHotKey("Class Abillity", "Class Overhaul: Ability", GlKeys.F, HotkeyType.CharacterControls);
 		chcapi.Input.SetHotKeyHandler("Class Abillity", ClassAbility);
 	}
 	
@@ -60,6 +64,9 @@ public class classoverhaulModSystem : ModSystem
 					plr.Pos.Motion = new Vec3d(dx,dy,dz);
 				}
 			break;
+			case "hunter":
+				
+			break;
 		}
 		return true;
 	}
@@ -76,12 +83,22 @@ public class classoverhaulModSystem : ModSystem
 				float speed = plr.Entity.Stats.GetBlended("walkspeed");
 				float addon = 0;
 				for(float i=1f; i>speed; i-=0.01f){
-					addon+=0.03f;
+					addon+=0.02f;
 				}
 				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",addon);
-				return;
+				
+				EntityBehaviorHunger hunger = plr.Entity.GetBehavior<EntityBehaviorHunger>();
+				if(hunger!=null){
+					float amount = (hunger.Saturation/100)/100;
+					plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",amount*2);
+					plr.Entity.Stats.Set("hungerrate","classoverhaul:blackguard3",amount*2);
+					plr.Entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",amount*3.5f);
+				}
 			}else{
 				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",0);
+				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",0);
+				plr.Entity.Stats.Set("hungerrate","classoverhaul:blackguard3",0);
+				plr.Entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",0);
 			}
 			
 			if(plr.Entity.WatchedAttributes.GetString("characterClass")=="clockmaker"){

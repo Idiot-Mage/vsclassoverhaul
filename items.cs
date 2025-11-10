@@ -10,7 +10,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Util;
 using Vintagestory.API.Datastructures;
 
-
 internal class itemClimbtool : Item{
 	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
 		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);

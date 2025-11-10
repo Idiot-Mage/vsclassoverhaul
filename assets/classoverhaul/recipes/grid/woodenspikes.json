@@ -1,0 +1,20 @@
+[
+	{
+		"ingredientPattern":"AAA",
+		"width":3,
+		"height":1,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:stick",
+				"quantity": 3
+			}
+		},
+		"output":{
+			"type":"block",
+			"code":"woodenspike",
+			"quantity": 1
+		},
+		"requiresTrait":"trapper"
+	}
+]
