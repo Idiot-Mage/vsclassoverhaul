@@ -5,6 +5,7 @@
     "item-tempcloth": "Temporal Bandage",
     "item-climbtool": "Climbing Pick",
     "item-sling": "Sling",
+    "item-leadslug": "Lead Slug",
     "block-woodenspike": "Wooden Spikes",
     "block-fakegrass": "Fake Grass",
     "block-fumoreimu": "Hyperrealistic FumoFumo Reimu Fumo",
@@ -21,10 +22,12 @@
     "game:itemdesc-spear-generic-hacking": "Attack a locust for a chance to convert it into an ally. It will follow and protect you, and you can have as many as you like.\n\n<font color=\"#99c9f9\"><i>Bring the wayward children home.</i></font><br>",
     "game:trait-timed": "<font color=\"#84ff84\">• Temporal Anomaly </font>",
     "game:traitdesc-timed": "Temporal stability lost is added to movement speed",
-    "game:traitdesc-improviser": "Exclusive craftable <a href=\"handbooksearch://sling\">sling</a> and <a href=\"handbooksearch://climbing\">climbing tool</a>",
+    "game:traitdesc-improviser": "Exclusive craftable <a href=\"handbooksearch://sling or beenade or lead slug\">sling</a> and <a href=\"handbooksearch://climbing\">climbing tool</a>",
     "game:trait-rogue": "<font color=\"#84ff84\">• Rogue </font>",
     "game:traitdesc-rogue": "Able to perform a dodge by pressing [F] with a 2 second cooldown. The keybind can be rebound",
     "game:trait-trapper": "<font color=\"#84ff84\">• Trap Lover </font>",
     "game:traitdesc-trapper": "Exclusive craftable <a href=\"handbooksearch://wooden spikes or fake grass\">traps</a> (the bad kind)",
-    "game:traitname-trapper": "Trap Lover"
+    "game:traitname-trapper": "Trap Lover",
+    "game:charattribute-armorDurabilityLoss--0.1": "+10% armor durability, new recipes to give <a href=\"handbooksearch://poultice or bandage\">2 extra healing items</a> from crafting",
+    "game:traitdesc-bowyer": "Exclusive craftable <a href=\"handbooksearch://crude bow or crude arrow or recurve bow \">bows and arrows</a>, most arrow crafting can be <a href=\"handbooksearch://arrow\">trippled</a>"
 }

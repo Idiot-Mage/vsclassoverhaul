@@ -14,7 +14,8 @@ namespace Vintagestory.GameContent
     {
     	List<Type> ammoTypes = new List<Type>(){
     		typeof(ItemStone),
-    		typeof(ItemClosedBeenade)
+    		typeof(ItemClosedBeenade),
+    		typeof(itemLeadSlug)
     	};
     	
         WorldInteraction[] interactions;
@@ -182,11 +183,17 @@ namespace Vintagestory.GameContent
             if (byEntity is EntityPlayer) byPlayer = byEntity.World.PlayerByUid(((EntityPlayer)byEntity).PlayerUID);
             if (api.Side == EnumAppSide.Server) byEntity.World.PlaySoundAt(new AssetLocation("sounds/tool/sling1"), byEntity, null, false, 8, 0.25f);
 	    
-	    EntityProperties type;
+	    EntityProperties type = null;
 	    if(stack.Collectible is ItemStone){
             	type = byEntity.World.GetEntityType(new AssetLocation("thrownstone-" + stack.Collectible.Variant["rock"]));
-            }else{
+            }
+            if(stack.Collectible is ItemClosedBeenade){
 		type = byEntity.World.GetEntityType(new AssetLocation("thrownbeenade"));
+            }
+            //using granite stone because im too lazy and cant be bothered to make my own projectile for a mod
+            //my time is limited, afterall. we can just imagine the stones a lead slug instead right?
+            if(stack.Collectible is itemLeadSlug){
+		type = byEntity.World.GetEntityType(new AssetLocation("thrownstone-granite"));
             }
             if(type==null){return;}
             

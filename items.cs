@@ -10,6 +10,15 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Util;
 using Vintagestory.API.Datastructures;
 
+
+internal class itemLeadSlug : Item{
+	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
+		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+		dsc.AppendLine("5 blunt damage when used with sling");	
+	}
+}
+
+
 internal class itemClimbtool : Item{
 	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
 		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);

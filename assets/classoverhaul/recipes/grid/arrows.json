@@ -1,0 +1,14 @@
+[
+	{
+		ingredientPattern: "H_,SS,F_",
+		requiresTrait: "bowyer",
+		ingredients: {
+			"H": { type: "item", code: "game:arrowhead-*", name: "metal" },
+			"S": { type: "item", code: "game:stick" },
+			"F": { type: "item", code: "game:feather" }
+		},
+		width: 2,
+		height: 3,
+		output: { type: "item", code: "game:arrow-{metal}", quantity: 3  }
+	}
+]

@@ -1,0 +1,32 @@
+[
+	{
+		"ingredientPattern":"B,C,A",
+		"width":1,
+		"height":3,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:ingot-lead",
+				"quantity": 1
+			},
+			"B": {
+				"type": "item",
+				"code": "game:hammer-*",
+				"isTool": true,
+				"toolDurabilityCost": 50
+			},
+			"C": {
+				"type": "item",
+				"code": "game:chisel-*",
+				"isTool": true,
+				"toolDurabilityCost": 50			
+			}
+		},
+		"output":{
+			"type":"item",
+			"code":"leadslug",
+			"quantity": 1
+		},
+		"requiresTrait":"improviser"
+	}
+]

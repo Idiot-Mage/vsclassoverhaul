@@ -27,6 +27,7 @@ public class classoverhaulModSystem : ModSystem
 		api.RegisterItemClass(Mod.Info.ModID+".tempcloth",typeof(itemTempcloth));
 		api.RegisterItemClass(Mod.Info.ModID+".climbtool",typeof(itemClimbtool));
 		api.RegisterItemClass(Mod.Info.ModID+".overhaulsling",typeof(itemOverhaulSling));
+		api.RegisterItemClass(Mod.Info.ModID+".leadslug",typeof(itemLeadSlug));
 		
 		api.RegisterBlockClass(Mod.Info.ModID+".fakegrass",typeof(blockFakegrass));
 		api.RegisterBlockClass(Mod.Info.ModID+".woodenspike",typeof(blockWoodenspike));

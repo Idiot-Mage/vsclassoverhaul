@@ -1,0 +1,130 @@
+[
+	{
+		ingredientPattern: "SBS	__L",
+		requiresTrait: "clothier",
+		ingredients: {
+			"L": { type: "block", code: "game:linen-*" },
+			"S": { type: "item", code: "game:powder-sulfur" },
+			"B": { type: "block", code: "game:bowl-*-fired" }
+		},
+		attributes: {
+			liquidContainerProps: {
+				requiresContent: { type: "item", code: "game:honeyportion" },
+				requiresLitres: 0.25
+			}
+		},		
+		width: 3,
+		height: 2,
+		output: { type: "item", code: "game:poultice-linen-honey-sulfur", quantity: 6  }
+	},
+	{
+		ingredientPattern: "H_	LH",
+		requiresTrait: "clothier",
+		ingredients: {
+			"L": { type: "block", code: "game:linen-*" },
+			"H": { type: "block", code: "game:flower-horsetail-free", quantity: 2 }
+		},
+		width: 2,
+		height: 2,
+		output: { type: "item", code: "game:poultice-linen-horsetail", quantity: 6  }
+	},
+	{
+		ingredientPattern: "H_	CH",
+		requiresTrait: "clothier",
+		ingredients: {
+			"C": { type: "item", code: "game:cattailtops", quantity: 2 },
+			"H": { type: "block", code: "game:flower-horsetail-free", quantity: 2 }
+		},
+		width: 2,
+		height: 2,
+		output: { type: "item", code: "game:poultice-reed-horsetail", quantity: 6  }
+	},
+	{
+		ingredientPattern: "SBS	_CC",
+		requiresTrait: "clothier",
+		ingredients: {
+			"C": { type: "item", code: "game:cattailtops", quantity: 2 },
+			"S": { type: "item", code: "game:powder-sulfur" },
+			"B": { type: "block", code: "game:bowl-*-fired" }
+		},
+		attributes: {
+			liquidContainerProps: {
+				requiresContent: { type: "item", code: "game:honeyportion" },
+				requiresLitres: 0.25
+			}
+		},		
+		width: 3,
+		height: 2,
+		output: { type: "item", code: "game:poultice-reed-honey-sulfur", quantity: 6  }
+	},
+	{
+		ingredientPattern: "H_	PH",
+		requiresTrait: "clothier",
+		ingredients: {
+			"P": { type: "item", code: "game:papyrustops", quantity: 2 },
+			"H": { type: "block", code: "game:flower-horsetail-free", quantity: 2 }
+		},
+		width: 2,
+		height: 2,
+		output: { type: "item", code: "game:poultice-reed-horsetail", quantity: 6  }
+	},
+	{
+		ingredientPattern: "SBS	PP_",
+		requiresTrait: "clothier",
+		ingredients: {
+			"P": { type: "item", code: "game:papyrustops", quantity: 2 },
+			"S": { type: "item", code: "game:powder-sulfur" },
+			"B": { type: "block", code: "game:bowl-*-fired" }
+		},
+		attributes: {
+			liquidContainerProps: {
+				requiresContent: { type: "item", code: "game:honeyportion" },
+				requiresLitres: 0.25
+			}
+		},
+		width: 3,
+		height: 2,
+		output: { type: "item", code: "game:poultice-reed-honey-sulfur", quantity: 6  }
+	},
+	
+	{
+		ingredientPattern: "_K,H_",
+		enabled: true,
+		shapeless: true,
+		requiresTrait: "clothier",
+		ingredients: {
+			"K": { type: "item", code: "game:knife-*", isTool: true },
+			"H": { type: "block", code: "game:linen-*", quantity: 1 },
+		},
+		width: 2,
+		height: 2,
+		output: { type: "item", code: "game:bandage-clean", quantity: 6 }
+	},
+	{
+		ingredientPattern: "_K,T_",
+		requiresTrait: "clothier",
+		enabled: true,
+		shapeless: true,
+		ingredients: {
+			"K": { type: "item", code: "game:knife-*", isTool: true },
+			"T": { type: "item", code: "game:*-tattered-*", quantity: 1 },
+		},
+		width: 2,
+		height: 2,
+		recipeGroup: 1,
+		output: { type: "item", code: "game:bandage-clean", quantity: 4 }
+	},
+	{
+		ingredientPattern: "_X,X_",
+		enabled: true,
+		shapeless: false,
+		requiresTrait: "clothier",
+		ingredients: {
+			"X": { type: "item", code: "game:flaxtwine", quantity: 1 },
+		},
+		width: 2,
+		height: 2,
+		recipeGroup: 2,
+		output: { type: "item", code: "game:bandage-clean", quantity: 4 }
+	}
+]
