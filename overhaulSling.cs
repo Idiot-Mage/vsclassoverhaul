@@ -193,7 +193,7 @@ namespace Vintagestory.GameContent
             //using granite stone because im too lazy and cant be bothered to make my own projectile for a mod
             //my time is limited, afterall. we can just imagine the stones a lead slug instead right?
             if(stack.Collectible is itemLeadSlug){
-		type = byEntity.World.GetEntityType(new AssetLocation("thrownstone-granite"));
+		type = byEntity.World.GetEntityType(new AssetLocation("thrownstone-obsidian"));
             }
             if(type==null){return;}
             

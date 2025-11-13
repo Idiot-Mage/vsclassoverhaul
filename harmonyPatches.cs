@@ -10,6 +10,7 @@ using Vintagestory.API.Util;
 using Vintagestory.API.Datastructures;
 using System;
 using System.Text;
+using Vintagestory.ServerMods;
 
 namespace classoverhaul;
 
@@ -33,7 +34,7 @@ public sealed class harmonyPatches : ModSystem{
 					item.Attributes.SetFloat("chminespeed",0.1f);
 					break;
 					case 4:
-					item.Attributes.SetFloat("chdurability",0.15f);
+					item.Attributes.SetFloat("chdurability",-0.15f);
 					break;
 					case 5:
 					item.Attributes.SetFloat("chhealing",0.07f);
@@ -92,7 +93,7 @@ public class CollectibleObjectPatch{
 					des+="mining boost: "+(inSlot.Itemstack.Attributes.GetFloat("chminespeed")*100f).ToString()+"%\n";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chdurability")){
-					des+="armor durability boost: "+(Math.Round(inSlot.Itemstack.Attributes.GetFloat("chdurability")*100f)).ToString()+"%\n";
+					des+="armor durability loss: "+(Math.Round(inSlot.Itemstack.Attributes.GetFloat("chdurability")*100f)).ToString()+"%\n";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chhealing")){
 					des+="healing boost: "+(inSlot.Itemstack.Attributes.GetFloat("chhealing")*100f).ToString()+"%\n";

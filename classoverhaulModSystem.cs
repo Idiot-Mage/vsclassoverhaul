@@ -13,8 +13,7 @@ using System;
 
 namespace classoverhaul;
 
-public class classoverhaulModSystem : ModSystem
-{
+public class classoverhaulModSystem : ModSystem{
 	private readonly Harmony harmonyInstance = new Harmony(harmonyID);
 	public const string harmonyID = "classoverhaulPatches";
 	
@@ -28,14 +27,24 @@ public class classoverhaulModSystem : ModSystem
 		api.RegisterItemClass(Mod.Info.ModID+".climbtool",typeof(itemClimbtool));
 		api.RegisterItemClass(Mod.Info.ModID+".overhaulsling",typeof(itemOverhaulSling));
 		api.RegisterItemClass(Mod.Info.ModID+".leadslug",typeof(itemLeadSlug));
+		api.RegisterItemClass(Mod.Info.ModID+".reststable",typeof(itemReststable));
+		api.RegisterItemClass(Mod.Info.ModID+".ruststable",typeof(itemRuststable));
 		
 		api.RegisterBlockClass(Mod.Info.ModID+".fakegrass",typeof(blockFakegrass));
 		api.RegisterBlockClass(Mod.Info.ModID+".woodenspike",typeof(blockWoodenspike));
+		
+		api.RegisterEntityBehaviorClass("classHandler", typeof(EntityBehaviorClassOverhaul));
+	}
+	
+	public override void Dispose(){
+		if(harmonyInstance!=null){
+			harmonyInstance.UnpatchAll("classoverhaulPatches");
+		}
 	}
 	
 	public static ICoreServerAPI chsapi;
 	public override void StartServerSide(ICoreServerAPI api){
-		api.Event.RegisterGameTickListener(onTickServer1s,1000,200);
+		api.Event.RegisterGameTickListener(onTick,50,0);
 		
 		chsapi=api;
 	}
@@ -78,40 +87,10 @@ public class classoverhaulModSystem : ModSystem
 		}
 	}
 
-	private void onTickServer1s(float dt){
+	private void onTick(float dt){
 		foreach(var plr in chsapi.World.AllOnlinePlayers){
-			if(plr.Entity.WatchedAttributes.GetString("characterClass")=="blackguard"){
-				float speed = plr.Entity.Stats.GetBlended("walkspeed");
-				float addon = 0;
-				for(float i=1f; i>speed; i-=0.01f){
-					addon+=0.02f;
-				}
-				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",addon);
-				
-				EntityBehaviorHunger hunger = plr.Entity.GetBehavior<EntityBehaviorHunger>();
-				if(hunger!=null){
-					float amount = (hunger.Saturation/100)/100;
-					plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",amount*2);
-					plr.Entity.Stats.Set("hungerrate","classoverhaul:blackguard3",amount*2);
-					plr.Entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",amount*3.5f);
-				}
-			}else{
-				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",0);
-				plr.Entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",0);
-				plr.Entity.Stats.Set("hungerrate","classoverhaul:blackguard3",0);
-				plr.Entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",0);
-			}
-			
-			if(plr.Entity.WatchedAttributes.GetString("characterClass")=="clockmaker"){
-				double stab = plr.Entity.WatchedAttributes.GetDouble("temporalStability");
-				double addon = 0;
-				for(double i=1; i>stab; i-=0.01){
-					addon+=0.01;
-				}
-				plr.Entity.Stats.Set("walkspeed","classoverhaul:clockmaker",(float)addon);
-			}else{
-				plr.Entity.Stats.Set("walkspeed","classoverhaul:clockmaker",0);
-			}
+			//to fix old versions, leave this in
+			plr.Entity.Stats.Set("walkspeed","classoverhaul:clockmaker",0);
 			
 			var inv = plr.InventoryManager.GetOwnInventory(GlobalConstants.characterInvClassName);
 			if(inv==null){continue;}

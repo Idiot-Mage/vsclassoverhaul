@@ -1,0 +1,11 @@
+{
+	"class": "classoverhaul.reststable",
+	"code": "reststable",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/reststable"
+	},
+	"maxstacksize": 1
+}

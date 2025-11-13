@@ -1,0 +1,30 @@
+[
+	{
+		"ingredientPattern":"CA_,ABA,_A_",
+		"width":3,
+		"height":3,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:clearquartz",
+				"quantity": 1
+			},
+			"B": {
+				"type":"item",
+				"code": "game:gear-temporal",
+				"quantity": 1
+			},
+			"C": {
+				"type":"block",
+				"code": "game:metal-parts",
+				"quantity": 1
+			}
+		},
+		"output":{
+			"type":"item",
+			"code":"reststable",
+			"quantity": 1
+		},
+		"requiresTrait":"tinkerer"
+	}
+]

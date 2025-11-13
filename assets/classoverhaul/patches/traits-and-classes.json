@@ -7,7 +7,7 @@
 		"value": [
 			{
 				"code": "timed",
-				"type": "positive",
+				"type": "negative",
 				"attributes": {}
 			},
 			{

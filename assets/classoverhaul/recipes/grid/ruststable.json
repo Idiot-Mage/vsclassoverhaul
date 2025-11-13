@@ -1,0 +1,35 @@
+[
+	{
+		"ingredientPattern":"_C_,ABA,ADA",
+		"width":3,
+		"height":3,
+		"ingredients":{
+			"A": {
+				"type":"item",
+				"code": "game:stick",
+				"quantity": 1
+			},
+			"B": {
+				"type":"item",
+				"code": "game:gear-rusty",
+				"quantity": 1
+			},
+			"C": {
+				"type":"item",
+				"code": "game:resin",
+				"quantity": 1
+			},
+			"D": {
+				"type":"item",
+				"code": "game:nugget-nativecopper",
+				"quantity": 1
+			}						
+		},
+		"output":{
+			"type":"item",
+			"code":"ruststable",
+			"quantity": 1
+		},
+		"requiresTrait":"tinkerer"
+	}
+]

@@ -105,6 +105,62 @@ public class Parts{
 }
 
 
+internal class itemReststable : Item{
+	readonly double hours = 2.5;
+	public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling){
+		handHandling = EnumHandHandling.Handled;
+		
+		double lastUsed = slot.Itemstack.Attributes.GetDouble("lastUsed",0);
+		if(byEntity.World.Calendar.TotalHours-lastUsed>hours && byEntity.WatchedAttributes.GetDouble("temporalStability")<0.99f){
+			slot.Itemstack.Attributes.SetDouble("lastUsed",byEntity.World.Calendar.TotalHours);
+			byEntity.WatchedAttributes.SetDouble("temporalStability",byEntity.WatchedAttributes.GetDouble("temporalStability")+0.2);
+			slot.MarkDirty();
+			
+			byEntity.World.PlaySoundAt(new AssetLocation("game:sounds/effect/translocate-breakdimension"),byEntity.ServerPos.X,byEntity.ServerPos.Y,byEntity.ServerPos.Z,null,true,10f,2f);
+			
+			Parts p = new Parts();
+			p.spawnParts(byEntity,new Vec3d(byEntity.ServerPos.X,byEntity.ServerPos.Y,byEntity.ServerPos.Z));
+		}
+	}
+	
+	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
+		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+		if(world.Side==EnumAppSide.Client){
+			var capi = world.Api as ICoreClientAPI;
+			var player = capi?.World?.Player;
+			if(player!=null && player.Entity.WatchedAttributes.GetString("characterClass")=="clockmaker"){
+				string rdy = "Status: Ready";
+				double lastUsed = inSlot.Itemstack.Attributes.GetDouble("lastUsed",0);
+				if(player.Entity.World.Calendar.TotalHours-lastUsed<=hours){
+					rdy = "Status: Unwinding";
+				}			
+				dsc.AppendLine("Restores 20% temporal stability when used\n\n"+rdy);
+			}else{
+				dsc.AppendLine("A strange clock.\nYou have no idea how it works.");
+			}
+		}
+	}
+}
+
+internal class itemRuststable : Item{
+	public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling){
+		handHandling = EnumHandHandling.Handled;
+		
+		slot.TakeOut(1);
+		slot.MarkDirty();
+		byEntity.WatchedAttributes.SetDouble("temporalStability",byEntity.WatchedAttributes.GetDouble("temporalStability")+0.1);
+		
+		Parts p = new Parts();
+		p.spawnParts(byEntity,new Vec3d(byEntity.ServerPos.X,byEntity.ServerPos.Y,byEntity.ServerPos.Z));
+	}
+	
+	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
+		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+		dsc.AppendLine("These old gears may still have some power left..\nRestores 10% temporal stability when used");
+	}
+}
+
+
 internal class itemTempcloth : Item{
 	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
 		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);

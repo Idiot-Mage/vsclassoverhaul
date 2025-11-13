@@ -1,0 +1,11 @@
+{
+	"class": "classoverhaul.ruststable",
+	"code": "ruststable",
+	"creativeinventory": {
+		"general": ["*"]
+	},
+	"texture": {
+		"base": "item/ruststable"
+	},
+	"maxstacksize": 1
+}
