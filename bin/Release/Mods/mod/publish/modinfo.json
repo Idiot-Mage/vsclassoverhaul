@@ -7,7 +7,7 @@
         "IdiotMage"
     ],
     "description": "overhauls classes",
-    "version": "0.0.10",
+    "version": "0.0.13",
     "dependencies": {
         "game": "1.21.0"
     }

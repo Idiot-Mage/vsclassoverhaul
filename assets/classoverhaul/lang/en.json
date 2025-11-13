@@ -13,7 +13,7 @@
     "block-fumoreimu": "Hyperrealistic FumoFumo Reimu Fumo",
     
     "game:charattribute-miningSpeedMul-0.1": "+10% mining speed",
-    "game:charattribute-hungerrate-0.1":"+10% hunger rate.\nStats change depending on how hungry you are\nFull: +60% melee damage, +70% mining speed, +30% hunger rate\nWell fed: +15% melee damage, +30% mining speed, +15% hunger rate\nPeckish: No buff\nHungry: -30% melee damage, -20% mining speed, -15% hunger rate",
+    "game:charattribute-hungerrate-0.1":"+10% hunger rate, for every 100 saturation above 500, gain 2% melee damage, 3% hunger rate, and 4.5% mining speed but for every 100 saturation below 500, lose 4% melee damage, 6% hunger rate, and 9% mining speed",
     "game:trait-ravenous": "<font color=\"#F5279F\">• Ravenous </font>",
     "game:traitdesc-merciless":"For every 1% movement speed lost, gain 2% melee damage. Also includes craftable <a href=\"handbooksearch://blackguard shortsword\">shortsword</a> and <a href=\"handbooksearch://blackguard shield\">shield</a>",
     "game:charattribute-meleeWeaponsDamage-0.1":"+10% melee damage",

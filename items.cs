@@ -217,6 +217,7 @@ internal class itemTempcloth : Item{
 
 internal class itemTempclock : Item{
 	public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo){
+		base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
 		dsc.AppendLine("Fast forward 10 days.");
 	}
 	

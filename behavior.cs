@@ -36,27 +36,13 @@ public class EntityBehaviorClassOverhaul : EntityBehavior{
 				
 				EntityBehaviorHunger hunger = entity.GetBehavior<EntityBehaviorHunger>();
 				if(hunger!=null){
-					float amount = (hunger.Saturation/hunger.MaxSaturation);
-					
-					float min = 0.3f;
-					float mid = 0.6f;
-					float max = 0.8f;
-					
-					if(amount<=min){
-						entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",-0.3f);
-						entity.Stats.Set("hungerrate","classoverhaul:blackguard3",-0.15f);
-						entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",-0.2f);
+					float amount = ((hunger.Saturation-500)/100)/100;
+					if(amount<0){
+						amount*=2;
 					}
-					if(amount>=mid){
-						entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",0.15f);
-						entity.Stats.Set("hungerrate","classoverhaul:blackguard3",0.15f);
-						entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",0.3f);
-					}
-					if(amount>=max){
-						entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",0.6f);
-						entity.Stats.Set("hungerrate","classoverhaul:blackguard3",0.3f);
-						entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",0.7f);
-					}
+					entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard2",amount*2);
+					entity.Stats.Set("hungerrate","classoverhaul:blackguard3",amount*3);
+					entity.Stats.Set("miningSpeedMul","classoverhaul:blackguard4",amount*4.5f);
 				}
 			break;
 		}
