@@ -11,6 +11,7 @@ using Vintagestory.API.Datastructures;
 using System;
 using System.Text;
 using Vintagestory.ServerMods;
+using System.Security.Cryptography;
 
 namespace classoverhaul;
 
@@ -23,21 +24,31 @@ public sealed class harmonyPatches : ModSystem{
 				int rare = rng.Next(6);
 				item.Attributes.SetInt("chrarity",rare);
 				
+				//why is the rng.Next so bad at generating random numbers
+				int hl = RandomNumberGenerator.GetInt32(4);
+				
+				//it likes to generate 1 a lot, so ive banned it
+				float amount = 0.01f;
+				while(amount<=0.01){
+					hl = RandomNumberGenerator.GetInt32(4);
+					amount = (float)RandomNumberGenerator.GetInt32(Math.Max(1,hl*5))/100;
+				}
+				
 				switch(rare){
 					case 1:
-					item.Attributes.SetFloat("chwalkspeed",0.05f);
+					item.Attributes.SetFloat("chwalkspeed",amount);
 					break;
 					case 2:
-					item.Attributes.SetFloat("chhunger",-0.05f);
+					item.Attributes.SetFloat("chhunger",-amount);
 					break;
 					case 3:
-					item.Attributes.SetFloat("chminespeed",0.1f);
+					item.Attributes.SetFloat("chminespeed",amount);
 					break;
 					case 4:
-					item.Attributes.SetFloat("chdurability",-0.15f);
+					item.Attributes.SetFloat("chdurability",-amount);
 					break;
 					case 5:
-					item.Attributes.SetFloat("chhealing",0.07f);
+					item.Attributes.SetFloat("chhealing",amount);
 					break;
 				}
 				outputSlot.MarkDirty();
@@ -83,21 +94,34 @@ public class CollectibleObjectPatch{
 			int rarity = inSlot.Itemstack.Attributes.GetInt("chrarity",0);
 			if(rarity>0){
 				string des = "";
+				string am = "";
+				bool rev = inSlot.Itemstack.Attributes.HasAttribute("equipped");
 				if(inSlot.Itemstack.Attributes.HasAttribute("chwalkspeed")){
-					des+="movement boost: "+(inSlot.Itemstack.Attributes.GetFloat("chwalkspeed")*100f).ToString()+"%\n";
+					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chwalkspeed")*100f).ToString() : "???";
+					
+					des=am+"% movement speed";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chhunger")){
-					des+="hunger boost: "+(inSlot.Itemstack.Attributes.GetFloat("chhunger")*100f).ToString()+"%\n";
+					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chhunger")*100f).ToString() : "???";
+					
+					des=am+"% hunger rate";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chminespeed")){
-					des+="mining boost: "+(inSlot.Itemstack.Attributes.GetFloat("chminespeed")*100f).ToString()+"%\n";
+					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chminespeed")*100f).ToString() : "???";
+					
+					des=am+"% mining speed";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chdurability")){
-					des+="armor durability loss: "+(Math.Round(inSlot.Itemstack.Attributes.GetFloat("chdurability")*100f)).ToString()+"%\n";
+					am = rev? (Math.Round(inSlot.Itemstack.Attributes.GetFloat("chdurability")*100f)).ToString() : "???";
+				
+					des=am+"% armor durability loss";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chhealing")){
-					des+="healing boost: "+(inSlot.Itemstack.Attributes.GetFloat("chhealing")*100f).ToString()+"%\n";
+					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chhealing")*100f).ToString() : "???";
+					
+					des=am+"% healing effectiveness";
 				}
+				
 				dsc.AppendLine("Masterfully crafted by a skilled tailor.\n"+des);
 			}
 		}

@@ -14,8 +14,8 @@ using System;
 namespace classoverhaul;
 
 public class classoverhaulModSystem : ModSystem{
-	private readonly Harmony harmonyInstance = new Harmony(harmonyID);
 	public const string harmonyID = "classoverhaulPatches";
+	public readonly Harmony harmonyInstance = new Harmony(harmonyID);
 	
 	public override void Start(ICoreAPI api){
 		harmonyInstance.PatchAll();
@@ -120,19 +120,30 @@ public class classoverhaulModSystem : ModSystem{
 			float healam = 0f;
 			foreach(var slot in slots){
 				if(slot==null || slot.Itemstack==null || slot.Itemstack.Attributes==null){continue;}
-				if(slot.Itemstack.Attributes.HasAttribute("chwalkspeed")){
+				bool walk = slot.Itemstack.Attributes.HasAttribute("chwalkspeed");
+				bool hunger = slot.Itemstack.Attributes.HasAttribute("chhunger");
+				bool minespeed = slot.Itemstack.Attributes.HasAttribute("chminespeed");
+				bool durab = slot.Itemstack.Attributes.HasAttribute("chdurability");
+				bool healr = slot.Itemstack.Attributes.HasAttribute("chhealing");
+				
+				if((walk||hunger||minespeed||durab||healr) && !slot.Itemstack.Attributes.HasAttribute("equipped")){
+					slot.Itemstack.Attributes.SetBool("equipped",true);
+					slot.MarkDirty();
+				}
+				
+				if(walk){
 					speedam+=slot.Itemstack.Attributes.GetFloat("chwalkspeed");
 				}
-				if(slot.Itemstack.Attributes.HasAttribute("chhunger")){
+				if(hunger){
 					hungeram+=slot.Itemstack.Attributes.GetFloat("chhunger");
 				}
-				if(slot.Itemstack.Attributes.HasAttribute("chminespeed")){
+				if(minespeed){
 					mineam+=slot.Itemstack.Attributes.GetFloat("chminespeed");
 				}
-				if(slot.Itemstack.Attributes.HasAttribute("chdurability")){
+				if(durab){
 					duraam+=slot.Itemstack.Attributes.GetFloat("chdurability");
 				}
-				if(slot.Itemstack.Attributes.HasAttribute("chhealing")){
+				if(healr){
 					healam+=slot.Itemstack.Attributes.GetFloat("chhealing");
 				}
 			}

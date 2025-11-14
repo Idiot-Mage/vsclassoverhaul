@@ -28,11 +28,9 @@ public class EntityBehaviorClassOverhaul : EntityBehavior{
 			break;
 			case "blackguard":
 				float speed = entity.Stats.GetBlended("walkspeed");
-				float addon = 0;
-				for(float i=1f; i>speed; i-=0.01f){
-					addon+=0.02f;
+				if(speed<1){
+					entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",(1-speed)*2);
 				}
-				entity.Stats.Set("meleeWeaponsDamage","classoverhaul:blackguard",addon);
 				
 				EntityBehaviorHunger hunger = entity.GetBehavior<EntityBehaviorHunger>();
 				if(hunger!=null){
