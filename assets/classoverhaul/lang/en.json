@@ -27,7 +27,7 @@
     "game:charattribute-wholeVesselLootChance-0.5": "+50% chance to collect cracked vessels",
     "game:charattribute-rustyGearDropRate-0.25": "+25% rusty gear drop rate",
     "game:charattribute-rangedWeaponsAcc-2": "+200% ranged accuracy",
-    "game:traitdesc-clothier": "Exclusive craftable <a href=\"handbooksearch://sewing kit or chateau or pastoral or reindeer or moon or minstrel or fortune or nomad or spice or cobalt or azure or thigh-high or fine trousers or high leather\">sewing kit, clothes</a> and <a href=\"handbooksearch://temporal bandage\">temporal bandage</a>. When crafting wearable items, have a chance to add an extra stat",
+    "game:traitdesc-clothier": "Exclusive craftable <a href=\"handbooksearch://sewing kit or chateau or pastoral or reindeer or moon or minstrel or fortune or nomad or spice or cobalt or azure or thigh-high or fine trousers or high leather\">sewing kit, clothes</a> and <a href=\"handbooksearch://temporal bandage\">temporal bandage</a>. When crafting wearable items, have a chance to add an extra stat. Extra stats can be rerolled by crafting the item with sewing kits, doing this also fully restores durability.",
     "game:itemdesc-spear-generic-hacking": "Attack a locust for a chance to convert it into an ally. It will follow and protect you, and you can have as many as you like.\n\n<font color=\"#99c9f9\"><i>Bring the wayward children home.</i></font><br>",
     "game:traitdesc-improviser": "Exclusive craftable <a href=\"handbooksearch://sling or beenade or lead slug\">sling</a> and <a href=\"handbooksearch://climbing\">climbing tool</a>",
     "game:trait-rogue": "<font color=\"#84ff84\">• Rogue </font>",

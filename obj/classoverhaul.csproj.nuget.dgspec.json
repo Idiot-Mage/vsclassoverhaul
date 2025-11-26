@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/gamedisk/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj": {}
+    "/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj": {}
   },
   "projects": {
-    "/media/gamedisk/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj": {
+    "/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/gamedisk/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj",
+        "projectUniqueName": "/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj",
         "projectName": "classoverhaul",
-        "projectPath": "/media/gamedisk/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj",
+        "projectPath": "/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj",
         "packagesPath": "/home/zero/.nuget/packages/",
-        "outputPath": "/media/gamedisk/vintagestory/classoverhaul/classoverhaul/obj/",
+        "outputPath": "/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/zero/.nuget/NuGet/NuGet.Config"
@@ -48,12 +48,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

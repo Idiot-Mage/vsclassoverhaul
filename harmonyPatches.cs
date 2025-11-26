@@ -17,7 +17,7 @@ namespace classoverhaul;
 
 [HarmonyPatch]
 public sealed class harmonyPatches : ModSystem{
-	public static void updateRarity(ItemStack item,ItemSlot outputSlot){
+	public static void updateRarity(ItemStack item,ItemSlot outputSlot,string name){
 		Random rng = new Random();
 		if(item!=null){
 			if(!item.Attributes.HasAttribute("chrarity")){
@@ -25,13 +25,17 @@ public sealed class harmonyPatches : ModSystem{
 				item.Attributes.SetInt("chrarity",rare);
 				
 				//why is the rng.Next so bad at generating random numbers
-				int hl = RandomNumberGenerator.GetInt32(4);
+				int hl = 0;
+				int hl2 = 0;
 				
-				//it likes to generate 1 a lot, so ive banned it
-				float amount = 0.01f;
-				while(amount<=0.01){
-					hl = RandomNumberGenerator.GetInt32(4);
-					amount = (float)RandomNumberGenerator.GetInt32(Math.Max(1,hl*5))/100;
+				float amount = 0;
+				
+				//it likes to generate 1, so ive banned it
+				while(amount<=0.01f){
+						hl = Math.Max(1,RandomNumberGenerator.GetInt32(3));
+						hl2 = Math.Max(1,RandomNumberGenerator.GetInt32(4));
+						
+						amount = (float)RandomNumberGenerator.GetInt32(Math.Max(2,hl*hl2))/100;
 				}
 				
 				switch(rare){
@@ -51,6 +55,9 @@ public sealed class harmonyPatches : ModSystem{
 					item.Attributes.SetFloat("chhealing",amount);
 					break;
 				}
+				
+				item.Attributes.SetString("crafterName",name);
+				
 				outputSlot.MarkDirty();
 			}
 		}
@@ -70,7 +77,7 @@ public class ItemWearablePatch{
 		Entity byPlayer = (inv as InventoryBasePlayer).Owner;
 		byPlayer.Api.Event.RegisterCallback(dt =>{
 		if(byPlayer!=null && byPlayer.WatchedAttributes.GetString("characterClass")=="tailor"){
-			harmonyPatches.updateRarity(outputSlot.Itemstack,outputSlot);	
+			harmonyPatches.updateRarity(outputSlot.Itemstack,outputSlot,byPlayer.GetName());	
 		}
 		},1);
 	}
@@ -98,31 +105,40 @@ public class CollectibleObjectPatch{
 				bool rev = inSlot.Itemstack.Attributes.HasAttribute("equipped");
 				if(inSlot.Itemstack.Attributes.HasAttribute("chwalkspeed")){
 					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chwalkspeed")*100f).ToString() : "???";
+					string p = (Math.Sign(inSlot.Itemstack.Attributes.GetFloat("chwalkspeed"))>0)?"+":"";
 					
-					des=am+"% movement speed";
+					des=p+am+"% movement speed";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chhunger")){
 					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chhunger")*100f).ToString() : "???";
+					string p = (Math.Sign(inSlot.Itemstack.Attributes.GetFloat("chhunger"))>0)?"+":"";
 					
-					des=am+"% hunger rate";
+					des=p+am+"% hunger rate";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chminespeed")){
 					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chminespeed")*100f).ToString() : "???";
+					string p = (Math.Sign(inSlot.Itemstack.Attributes.GetFloat("chminespeed"))>0)?"+":"";
 					
-					des=am+"% mining speed";
+					des=p+am+"% mining speed";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chdurability")){
 					am = rev? (Math.Round(inSlot.Itemstack.Attributes.GetFloat("chdurability")*100f)).ToString() : "???";
+					string p = (Math.Sign(inSlot.Itemstack.Attributes.GetFloat("chdurability"))>0)?"+":"";
 				
-					des=am+"% armor durability loss";
+					des=p+am+"% armor durability loss";
 				}
 				if(inSlot.Itemstack.Attributes.HasAttribute("chhealing")){
 					am = rev? (inSlot.Itemstack.Attributes.GetFloat("chhealing")*100f).ToString() : "???";
+					string p = (Math.Sign(inSlot.Itemstack.Attributes.GetFloat("chhealing"))>0)?"+":"";
 					
-					des=am+"% healing effectiveness";
+					des=p+am+"% healing effectiveness";
 				}
 				
-				dsc.AppendLine("Masterfully crafted by a skilled tailor.\n"+des);
+				if(inSlot.Itemstack.Attributes.HasAttribute("crafterName")){
+					dsc.AppendLine("<font color=\"#ff9900\">Masterfully tailored by "+inSlot.Itemstack.Attributes.GetString("crafterName")+"</font> \n"+des+"\n");
+				}else{
+					dsc.AppendLine("<font color=\"#ff9900\">Masterfully crafted by a skilled tailor </font>\n"+des+"\n");
+				}
 			}
 		}
 		callDepth--;

@@ -66,7 +66,6 @@ public class classoverhaulModSystem : ModSystem{
 			case "malefactor":
 				if(plr.Pos.Motion!=Vec3d.Zero && plr.OnGround){
 					if(dashCooldown>0){break;}
-					dashCooldown=2;
 					double mult = (double)plr.Stats.GetBlended("walkspeed")*15;
 					double dx = plr.Pos.Motion.X*mult;
 					double dy = plr.Pos.Motion.Y+0.1;
@@ -109,7 +108,9 @@ public class classoverhaulModSystem : ModSystem{
 				inv[(int)EnumCharacterDressType.Foot],
 				inv[(int)EnumCharacterDressType.ArmorHead],
 				inv[(int)EnumCharacterDressType.ArmorBody],
-				inv[(int)EnumCharacterDressType.ArmorLegs]
+				inv[(int)EnumCharacterDressType.ArmorLegs],
+				inv[(int)EnumCharacterDressType.Waist],
+				inv[(int)EnumCharacterDressType.Emblem]
 			};
 			
 			//tryon please add the ability to change item stats at runtime and add any item stat to any item.

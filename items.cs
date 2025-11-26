@@ -260,7 +260,7 @@ internal class itemQuickstep : Item{
 	public override void TryMergeStacks(ItemStackMergeOperation op){
 		if(op.CurrentPriority == EnumMergePriority.DirectMerge){
 			int old = op.SinkSlot.Itemstack.Attributes.GetInt("fuel",0);
-			op.SinkSlot.Itemstack.Attributes.SetInt("fuel",old+50);
+			op.SinkSlot.Itemstack.Attributes.SetInt("fuel",old+75);
 			
 			op.MovedQuantity=1;
 			op.SourceSlot.TakeOut(1);

@@ -1,0 +1,4 @@
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/publish/modinfo.json
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/publish/classoverhaul.dll
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/publish/classoverhaul.deps.json
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/publish/classoverhaul.pdb

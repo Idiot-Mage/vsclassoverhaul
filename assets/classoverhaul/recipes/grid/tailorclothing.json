@@ -1,0 +1,24 @@
+[
+	{
+		ingredientPattern: "H,S",
+		requiresTrait: "clothier",
+		ingredients: {
+			"H": { type: "item", code: "game:clothes-*", name: "clothing" },
+			"S": { type: "item", code: "game:sewingkit", quantity: 2 }
+		},
+		width: 2,
+		height: 1,
+		output: { type: "item", code: "game:clothes-{clothing}", quantity: 1  }
+	},
+	{
+		ingredientPattern: "H,S",
+		requiresTrait: "clothier",
+		ingredients: {
+			"H": { type: "item", code: "game:armor-*", name: "armor" },
+			"S": { type: "item", code: "game:sewingkit", quantity: 8 }
+		},
+		width: 2,
+		height: 1,
+		output: { type: "item", code: "game:armor-{armor}", quantity: 1  }
+	}
+]

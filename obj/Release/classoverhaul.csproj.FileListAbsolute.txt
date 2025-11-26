@@ -12,3 +12,17 @@
 /media/gamedisk/vintagestory/classoverhaul/classoverhaul/obj/Release/refint/classoverhaul.dll
 /media/gamedisk/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.pdb
 /media/gamedisk/vintagestory/classoverhaul/classoverhaul/obj/Release/ref/classoverhaul.dll
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/modinfo.json
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/classoverhaul.deps.json
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/classoverhaul.dll
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/bin/Release/Mods/mod/classoverhaul.pdb
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.csproj.AssemblyReference.cache
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.GeneratedMSBuildEditorConfig.editorconfig
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.AssemblyInfoInputs.cache
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.AssemblyInfo.cs
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.csproj.CoreCompileInputs.cache
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.sourcelink.json
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.dll
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/refint/classoverhaul.dll
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/classoverhaul.pdb
+/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/obj/Release/ref/classoverhaul.dll

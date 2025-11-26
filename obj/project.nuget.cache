@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zTsD1U5UsK+dEHSp9Zrwbgmuw23D6WS2ftM1iDZ+jpfKyHRZsM1Esh55IWQ+i4dgZHFKMpjhNXejY1IsjXLUyw==",
+  "dgSpecHash": "6KwkI46NLLcl2qWdAU6Oegm3sF/69vTxh1H6s+8TtQGjVKQgbHej+XiRTAMaSwz3GSdRQx+sGkLdzYk0fHTvPQ==",
   "success": true,
-  "projectFilePath": "/media/gamedisk/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/run/media/zero/Library/vintagestory/classoverhaul/classoverhaul/classoverhaul.csproj",
+  "expectedPackageFiles": [
+    "/home/zero/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
+  ],
   "logs": []
 }
